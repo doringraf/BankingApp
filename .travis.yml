@@ -2,5 +2,3 @@ language: java
 rvm:
   - 2.2
   - jruby
-    git config --global user.email "doringraf@gmail.com"
-  git config --global user.name "Dorin"
