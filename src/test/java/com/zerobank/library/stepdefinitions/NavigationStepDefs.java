@@ -42,6 +42,7 @@ public class NavigationStepDefs {
         if (tabName.toLowerCase().equals("find transactions")){
             accountActivity.findTransactions.click();
         }
+        dashboardMenuPage.goToTab(tabName);
     }
 
 }

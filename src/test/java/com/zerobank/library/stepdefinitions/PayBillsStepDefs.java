@@ -5,13 +5,16 @@ import com.zerobank.library.utilities.BrowserUtils;
 import com.zerobank.library.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 public class PayBillsStepDefs {
@@ -99,4 +102,40 @@ public class PayBillsStepDefs {
         System.out.println("numbersOnly = " + numbersOnly);
         Assert.assertTrue(numbersOnly);
     }
+
+    @Then("following currencies should be available")
+    public void following_currencies_should_be_available(List<String> expectedCurrencyList) {
+       WebElement element;
+       Select listSelect = new Select(payBillsPage.currencyList);
+        List<String> actualCurrencyList = BrowserUtils.getElementsText(listSelect.getOptions());
+        actualCurrencyList.remove(0);
+        for (String s : expectedCurrencyList) {
+            Assert.assertTrue(actualCurrencyList.contains(s));
+        }
+    }
+
+
+    @When("user tries to calculate cost without selecting/entering a {}")
+    public void user_tries_to_calculate_cost_without_selecting(String enterValueTo) {
+        Random rand = new Random();
+        if (enterValueTo.equalsIgnoreCase("currency")){
+            int i = random.nextInt();
+            payBillsPage.amountInputForeignCash.sendKeys(i+"");
+        } else if (enterValueTo.equalsIgnoreCase("value")){
+            Select allCurrency = new Select(payBillsPage.currencyList);
+            int randomNr = rand.nextInt(allCurrency.getOptions().size());
+            allCurrency.selectByIndex(randomNr);
+        }
+        payBillsPage.calculateCostsButton.click();
+    }
+
+    @Then("error message should be displayed")
+    public void error_message_should_be_displayed() {
+        Alert alert = Driver.getDriver().switchTo().alert();
+        Assert.assertFalse(alert.getText().isEmpty());
+        alert.accept();
+
+
+    }
+
 }
