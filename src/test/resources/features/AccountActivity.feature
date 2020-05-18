@@ -1,3 +1,4 @@
+@smoke @regression
 Feature: Account Activity
 
   Background:

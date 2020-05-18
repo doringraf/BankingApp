@@ -1,3 +1,4 @@
+@smoke @regression
 Feature: Pay Bills verification
 
   Background:

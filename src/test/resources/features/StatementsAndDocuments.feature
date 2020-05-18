@@ -1,4 +1,4 @@
-
+@regression
 Feature: Statements and Documents details
   Background:
     Given the user is logged in

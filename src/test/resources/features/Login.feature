@@ -1,3 +1,5 @@
+@smoke
+@regression
 Feature: Automating login functionality
 
   Background:

@@ -1,3 +1,4 @@
+@smoke
 Feature: Smoke test
 
   Background:
