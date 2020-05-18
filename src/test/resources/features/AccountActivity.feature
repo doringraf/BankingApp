@@ -7,6 +7,7 @@ Feature: Account Activity
 
 
   Scenario: Account Activity
+    Given I am on the Account Activity page
     Given Account Activity page should have the title "Zero - Account Activity"
     And In the Account drop down default option should be Savings.
     Then Account drop down should have the following options: Savings, Checking, Savings, Loan, Credit Card, Brokerage
