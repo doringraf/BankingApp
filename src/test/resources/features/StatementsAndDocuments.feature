@@ -18,16 +18,16 @@ Feature: Statements and Documents details
   | 2012 | 1     |
 
 
-  @wip
-  Scenario Outline: Download statements
-#    Given the user accesses the Statements & Documents tab
-    And the user selects the Recent Statements Year <year>
-    When the user clicks on statement "<statement>"
-    Then the downloaded file name should contain "<name>"
-    And the file type should be pdf
-    Examples:
-      | year | statement               | name     |
-      | 2009 | Statement 31/11/09(57K) | 31-11-09 |
-#      | 2010 | Statement 01/12/10(57K) | 01-12-10 |
-#      | 2011 | Statement 05/12/11(57K) | 05-12-11 |
-#      | 2012 | Statement 01/10/12(57K) | 01-10-12 |
+#
+#  Scenario Outline: Download statements
+##    Given the user accesses the Statements & Documents tab
+#    And the user selects the Recent Statements Year <year>
+#    When the user clicks on statement "<statement>"
+#    Then the downloaded file name should contain "<name>"
+#    And the file type should be pdf
+#    Examples:
+#      | year | statement               | name     |
+#      | 2009 | Statement 31/11/09(57K) | 31-11-09 |
+##      | 2010 | Statement 01/12/10(57K) | 01-12-10 |
+##      | 2011 | Statement 05/12/11(57K) | 05-12-11 |
+##      | 2012 | Statement 01/10/12(57K) | 01-10-12 |
