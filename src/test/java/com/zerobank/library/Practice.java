@@ -13,6 +13,12 @@ public class Practice {
         System.out.println("hello world");
         System.out.println("hello world");
         System.out.println("ssssshello world");
-
+        System.out.println("hellssssso world");
+        System.out.println("hello world");
+        System.out.println("hello world");        System.out.println("hellssssso world");
+        System.out.println("hello world");
+        System.out.println("hello world");        System.out.println("hellssssso world");
+        System.out.println("hello world");
+        System.out.println("hello world");
     }
 }
